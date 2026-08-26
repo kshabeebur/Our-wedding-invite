@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Grand Wedding Invitation | Habeebur Rahman & Thagasin Banu</title>
+    
+    <!-- Premium Google Fonts for Effective Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Poppins:wght@300;400;500;600&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0d0d12;
+        }
+
+        /* Outer Mobile Frame */
+        .app-container {
+            width: 92%;
+            max-width: 420px;
+            height: 88vh;
+            max-height: 800px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            position: relative;
+            border: 1px solid #d4af37;
+            background: #ffffff;
+        }
+
+        /* Page Base Structure */
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px 25px 20px;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.95) translateY(20px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 1;
+            background: #ffffff;
+            color: #222222;
+        }
+
+        .page.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1) translateY(0);
+            z-index: 2;
+        }
+
+        /* ================= PAGE 1 FULL PHOTO COVER STYLING ================= */
+        #page1 {
+            padding: 0;
+            position: relative;
+            background: #000;
+        }
+
+        .full-page-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .page1-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom, 
+                rgba(0, 0, 0, 0.8) 0%, 
+                rgba(0, 0, 0, 0.3) 50%, 
+                rgba(0, 0, 0, 0.88) 100%
+            );
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px 35px 20px;
+            text-align: center;
+        }
+
+        .page1-title-container {
+            margin-bottom: 50px;
+        }
+
+        /* ================= PHOTO FRAME FOR PAGE 2 ================= */
+        .page2-photo-frame {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            border: 3px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            overflow: hidden;
+            margin: 8px auto;
+            flex-shrink: 0;
+        }
+
+        .page2-photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ================= ENHANCED TYPOGRAPHY SYSTEM ================= */
+        .bismillah-arabic {
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #fcf6ba;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        .dua-arabic {
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            line-height: 1.8;
+            color: #8b0000;
+            margin: 12px 0;
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #8b6f20;
+            font-weight: 700;
+        }
+
+        #page1 .subtitle {
+            color: #f3e5ab;
+            letter-spacing: 3.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .main-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.9rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin: 8px 0;
+            line-height: 1.25;
+            color: #fcf6ba;
+            text-shadow: 0 3px 12px rgba(0,0,0,0.7);
+        }
+
+        .couple-names {
+            font-family: 'Alex Brush', cursive;
+            font-size: 3.2rem;
+            line-height: 1.1;
+            margin: 1px 0;
+            color: #8b0000;
+            text-shadow: 0 1px 2px rgba(139, 0, 0, 0.15);
+        }
+
+        .ampersand {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #d4af37;
+            margin: 1px 0;
+        }
+
+        .info-large {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: #8b0000;
+            margin: 6px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .info-sub {
+            font-size: 0.95rem;
+            color: #444444;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .dua-english {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555555;
+            padding: 0 10px;
+        }
+
+        .gold-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 10px auto;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 13px 32px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 50%, #aa771c 100%);
+            color: #120008;
+            margin-top: 5px;
+        }
+
+        .btn-page {
+            background: linear-gradient(135deg, #8b0000 0%, #aa0000 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.25);
+        }
+
+        .btn:active { transform: scale(0.96); }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- ================= PAGE 1: FULL PAGE PHOTO COVER ================= -->
+        <div id="page1" class="page active">
+            <!-- Full Background Image -->
+            <img src="welcome_photo.jpg" alt="Welcome Photo" class="full-page-bg" onerror="this.src='hands.jpg'">
+
+            <div class="page1-overlay">
+                <div>
+                    <p class="bismillah-arabic" lang="ar" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+                    <div class="gold-divider"></div>
+                    <p class="subtitle" style="margin-top: 5px;">In the name of Allah</p>
+                </div>
+
+                <div class="page1-title-container">
+                    <p class="subtitle">Cordially Request Your Presence At The</p>
+                    <h1 class="main-title">WEDDING INVITATION</h1>
+                </div>
+
+                <button class="btn" onclick="nextPage()">Tap To Open ✨</button>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 2: GROOM & BRIDE ================= -->
+        <div id="page2" class="page">
+            <p class="subtitle">Together With Their Families</p>
+
+            <!-- PHOTO FRAME ON PAGE 2 -->
+            <div class="page2-photo-frame">
+                <img src="hands.jpg" alt="Habeebur Rahman & Thagasin Banu">
+            </div>
+
+            <div style="width: 100%;">
+                <h2 class="couple-names">Habeebur Rahman</h2>
+                <div class="ampersand">&</div>
+                <h2 class="couple-names">Thagasin Banu</h2>
+            </div>
+
+            <div class="gold-divider"></div>
+
+            <button class="btn btn-page" onclick="nextPage()">Date & Venue ➔</button>
+        </div>
+
+        <!-- ================= PAGE 3: VENUE PALACE ================= -->
+        <div id="page3" class="page">
+            <p class="subtitle">The Celebration</p>
+
+            <div style="margin: 15px 0;">
+                <p class="subtitle">DATE & TIME</p>
+                <h3 class="info-large">Wednesday, Sept 16, 2026</h3>
+                <p class="info-sub">⏱️ 4:00 PM – 6:00 PM</p>
+
+                <div class="gold-divider"></div>
+
+                <p class="subtitle">VENUE</p>
+                <h3 class="info-large">Twins Mahal</h3>
+                <p class="info-sub">Anna Nagar, Madurai</p>
+            </div>
+
+            <div>
+                <a href="https://maps.app.goo.gl/ANG4ZVQ7TteSTBEg6?g_st=ipc" target="_blank" class="btn btn-page" style="margin-bottom: 8px;">📍 Open Google Maps</a>
+                <br>
+                <button class="btn btn-page" onclick="nextPage()">Islamic Blessing ➔</button>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 4: ISLAMIC BLESSING DUA ================= -->
+        <div id="page4" class="page">
+            <p class="subtitle">Islamic Blessing</p>
+
+            <div class="gold-divider"></div>
+
+            <div style="margin: 15px 0;">
+                <p class="dua-arabic" lang="ar" dir="rtl">بَارَكَ ٱللَّهُ لَك وَبَارَكَ عَلَيْك وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+                <div class="gold-divider"></div>
+                <p class="dua-english">
+                    "May Allah bless you, and shower His blessings upon you, and join you together in goodness."
+                </p>
+            </div>
+
+            <button class="btn btn-page" onclick="nextPage()">🔄 Restart Invitation</button>
+        </div>
+
+    </div>
+
+    <script>
+        let currentPageIndex = 0;
+        const pages = document.querySelectorAll('.page');
+
+        function nextPage() {
+            pages[currentPageIndex].classList.remove('active');
+            currentPageIndex = (currentPageIndex + 1) % pages.length;
+            pages[currentPageIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
